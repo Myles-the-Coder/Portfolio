@@ -1,0 +1,27 @@
+/* ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 0 1rem;
+}
+
+a {
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+a:hover {
+  background-color: lightslategray;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
