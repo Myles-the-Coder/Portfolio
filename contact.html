@@ -4,20 +4,21 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="favicon" href="/favicon.ico" />
+		<link rel="favicon" href="./favicon.ico" />
     <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/tota11y.min.js"></script>
 		<title>Contact</title>
 	</head>
 	<body>
 		<div title="Portfolio Structure">
       <header>
-        <nav>
-          <h2>Myles Jefferson <img src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo"></h2>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank">About</a></li>
-            <li><a href="">Work</a></li>
-            <li><a href="contact.html" target="_blank">Contact</a></li>
+        <nav role="navigation">
+          <h1>Myles Jefferson <img src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo of Myles Jefferson"></h1>
+          <ul role="menubar">
+            <li role="presentation"><a href="index.html" role="menuitem">Home</a></li>
+            <li role="presentation"><a href="about.html" role="menuitem">About</a></li>
+            <li role="presentation"><a href="" role="menuitem">Work</a></li>
+            <li role="presentation"><a href="contact.html" role="menuitem">Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -35,18 +36,18 @@
           <button><a href="mailto:99mylesjefferson@gmail.com">Contact Me</a></button>
         </div>
         <br>
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name">
+        <form id="contact-form">
+          <label for="tel-number" class="standard-label">Telephone:</label>
+          <input type="tel" id="tel-number" placeholder="Enter telephone number...">
           <br>
-          <label for="email">Email</label>
-          <input type="email" id="email">
+          <label for="email" class="standard-label">Email:</label>
+          <input type="email" id="email" placeholder="Enter email..." required>
           <br>
-          <label for="textarea">Message</label>
+          <label for="textarea" class="standard-label">Message:</label>
           <br>
-          <textarea name="message" id="textarea" cols="30" rows="5"></textarea>
+          <textarea name="message" id="textarea" cols="30" rows="5" placeholder="Enter message..." maxlength="240" required></textarea>
           <br>
-          <button type="submit">Submit</button>
+          <input type="submit" value="Send Message">
         </form>
       </section>
 		</div>

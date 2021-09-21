@@ -6,24 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="favicon" href="/favicon.ico" />
 		<link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/tota11y.min.js"></script>
 		<title>Welcome To HTML!</title>
 	</head>
 	<body>
 		<header title="Portfolio Structure">
-			<nav>
-				<h2>Myles Jefferson <img src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo"></h2>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="">Work</a></li>
-					<li><a href="contact.html">Contact</a></li>
+			<nav role="navigation">
+				<h1>Myles Jefferson <img src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo of Myles Jefferson"></h1>
+				<ul role="menubar">
+					<li role="presentation"><a href="index.html" role="menuitem">Home</a></li>
+					<li role="presentation"><a href="about.html" role="menuitem">About</a></li>
+					<li role="presentation"><a href="" role="menuitem">Work</a></li>
+					<li role="presentation"><a href="contact.html" role="menuitem">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
 			<img
 				src="https://th.bing.com/th/id/OIP.UqkKybz-20NDOOiXTKuajgHaHa?pid=ImgDet&rs=1"
-				alt="Profile Picture"
+				alt=""
 				height="150"
 			/>
 			<h1>Hello, World!</h1>

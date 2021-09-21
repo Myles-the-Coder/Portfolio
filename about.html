@@ -5,24 +5,84 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="favicon" href="/favicon.ico" />
+		<script defer src="./js/tota11y.min.js"></script>
 		<title>About</title>
 	</head>
 	<body>
 		<div title="Portfolio Structure">
-      <header>
-        <nav>
-          <h2>Myles Jefferson <img src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo"></h2>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="">Work</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <h1>About</h1>
-      </main>
+			<header>
+				<nav role="navigation">
+					<h1>
+						Myles Jefferson
+						<img
+							src="./img/MJ-Logo-Design-01 (1).svg"
+							height="50"
+							alt="Personal Logo of Myles Jefferson"
+						/>
+					</h1>
+					<ul role="menubar">
+						<li role="presentation">
+							<a href="index.html" role="menuitem" aria-label="Home">Home</a>
+						</li>
+						<li role="presentation">
+							<a href="about.html" role="menuitem" aria-label="About">About</a>
+						</li>
+						<li role="presentation">
+							<a href="" role="menuitem" aria-label="Work">Work</a>
+						</li>
+						<li role="presentation">
+							<a href="contact.html" role="menuitem" aria-label="Contact"
+								>Contact</a
+							>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<div>
+					<h1>About</h1>
+					<p>
+						I am a web developer with a proclivity for Front-End Development. I
+						have experience working with HTML, CSS, Bootstrap, JavaScript, and
+						React.js. Additionally, I have a solid understanding Git version control, Node.js,
+						and implementing API calls. While most of my experience resides on the front end, I plan to expand my skill set with more Back-End focused frameworks and applications like Express.js and PostgresSQL
+					</p>
+          <p>
+            I consider myself to be a 'forever student', one who is always eager to build upon my existing experience and stay in tune with the ever-changing world of web development. Ultimately, I want to bring my skills to an energetic, passionate, and forward-thinking company where I can grow into a Full Stack Developer. 
+          </p>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>Skills</th>
+							<th>Years of Experience</th>
+							<th>Level of Expertise</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>HTML</td>
+							<td>3</td>
+							<td>Advanced</td>
+						</tr>
+						<tr>
+							<td>CSS</td>
+							<td>2</td>
+							<td>Intermediate</td>
+						</tr>
+						<tr>
+							<td>JavaScript</td>
+							<td>1</td>
+							<td>Beginner</td>
+						</tr>
+						<tr>
+							<td>React</td>
+							<td>1</td>
+							<td>Beginner</td>
+						</tr>
+					</tbody>
+				</table>
+			</main>
 		</div>
 	</body>
 </html>
