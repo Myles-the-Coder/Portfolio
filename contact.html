@@ -4,52 +4,110 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="favicon" href="./favicon.ico" />
-    <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./js/tota11y.min.js"></script>
+		<link rel="shortcut icon" href="./img/favicon.ico" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<script defer src="./js/tota11y.min.js"></script>
 		<title>Contact</title>
 	</head>
 	<body>
-		<div title="Portfolio Structure">
-      <header>
-        <nav role="navigation">
-          <h1>Myles Jefferson <img src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo of Myles Jefferson"></h1>
-          <ul role="menubar">
-            <li role="presentation"><a href="index.html" role="menuitem">Home</a></li>
-            <li role="presentation"><a href="about.html" role="menuitem">About</a></li>
-            <li role="presentation"><a href="" role="menuitem">Work</a></li>
-            <li role="presentation"><a href="contact.html" role="menuitem">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section>
-        <h1>
-          Let's get in touch.
-        </h1>
-        <div>
-          <h2>Myles Jefferson</h2>
-          <h3>Akron, Colorado</h3>
-          <a href="mailto:99mylesjefferson@gmail.com">99mylesjefferson(at)gmail(dot)com</a>
-          <br>
-          <a href="tel:+555506672">(555)520-6672</a>
-          <br>
-          <button><a href="mailto:99mylesjefferson@gmail.com">Contact Me</a></button>
-        </div>
-        <br>
-        <form id="contact-form">
-          <label for="tel-number" class="standard-label">Telephone:</label>
-          <input type="tel" id="tel-number" placeholder="Enter telephone number...">
-          <br>
-          <label for="email" class="standard-label">Email:</label>
-          <input type="email" id="email" placeholder="Enter email..." required>
-          <br>
-          <label for="textarea" class="standard-label">Message:</label>
-          <br>
-          <textarea name="message" id="textarea" cols="30" rows="5" placeholder="Enter message..." maxlength="240" required></textarea>
-          <br>
-          <input type="submit" value="Send Message">
-        </form>
-      </section>
+		<div>
+			<header>
+				<nav role="navigation">
+					<img
+						src="./img/MJ-Logo-Design-01 (1).svg"
+						height="50"
+						alt="Personal Logo of Myles Jefferson"
+					/>
+					<ul role="menubar" class="navigation-list">
+						<li role="presentation">
+							<a href="index.html" role="menuitem" class="navigation-list__item"
+								>Home</a
+							>
+						</li>
+						<li role="presentation">
+							<a
+								href="about.html"
+								role="menuitem"
+								class="navigation-list__item"
+								aria-label="About Me"
+								>About</a
+							>
+						</li>
+						<li role="presentation">
+							<a href="" role="menuitem" class="navigation-list__item">Work</a>
+						</li>
+						<li role="presentation">
+							<a
+								href="contact.html"
+								role="menuitem"
+								class="navigation-list__item"
+								>Contact</a
+							>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<h1>Let's get in touch.</h1>
+				<div class="info-container">
+					<a
+						class="contact-info"
+						href="mailto:99mylesjefferson@gmail.com"
+						aria-label="Contact email"
+						>99mylesjefferson@gmail.com</a
+					>
+					<a
+						class="contact-info"
+						href="#"
+						aria-label="Contact phone number"
+						>(555)520-6672</a
+					>
+
+					<button class="btn">
+						<a href="mailto:99mylesjefferson@gmail.com">Contact Me</a>
+					</button>
+				</div>
+				<br />
+				<form id="contact-form">
+					<label for="tel-number" class="standard-label">Telephone:</label>
+					<br />
+					<input
+						type="tel"
+						id="tel-number"
+						placeholder="Enter telephone number..."
+					/>
+					<br />
+					<label for="email" class="standard-label">Email:</label>
+					<br />
+					<input
+						type="email"
+						id="email"
+						placeholder="Enter email..."
+						required
+					/>
+					<br />
+					<label for="textarea" class="standard-label">Message:</label>
+					<br />
+					<textarea
+						name="message"
+						id="textarea"
+						cols="30"
+						rows="5"
+						placeholder="Enter message..."
+						maxlength="240"
+						required
+					></textarea>
+					<br />
+					<input class="btn" type="submit" value="Send Message" />
+				</form>
+			</main>
 		</div>
 	</body>
 </html>

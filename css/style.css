@@ -1,27 +1,200 @@
-/* ul {
-  display: flex;
-  list-style: none;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --primary-color: #8e9eab;
+  --secondary-color: #eef2f3;
+	--box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Body Styling and Font */
+
+body {
+	background: var(--primary-color); /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#eef2f3,
+		#8e9eab
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#eef2f3,
+		#8e9eab
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	font-family: 'Lato', sans-serif;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+p {
+	font-size: 1.1rem;
+}
+
+/* Text Color: #000 and #fff,
+Primary Color: #8e9eab,
+Secondary Color: #eef2f3
+*/
+
+/* Navigation */
+
+ul {
+	display: flex;
+	list-style: none;
 }
 
 li {
-  margin: 0 1rem;
+	margin: 0 10px;
 }
 
 a {
-  color: #000;
-  padding: 1rem;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
+	color: #000;
+	padding: 0.5rem;
+	border-radius: .8rem;
+	text-decoration: none;
+	transition: background-color 0.2s ease;
 }
 
-a:hover {
-  background-color: lightslategray;
-  color: #fff;
+nav a:hover {
+	background-color: #000;
+	color: var(--secondary-color);
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background: var(--secondary-color);
+	font-size: 1.2rem;
+	font-style: italic;
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+
+/* Home */
+
+main,
+footer,
+.info-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+main {
+	margin: 10px;
+	text-align: center;
+}
+
+main .btn {
+	color: #000;
+}
+
+.social-links {
+	display: flex;
+}
+
+.social-links img {
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.title {
+	text-align: center;
+}
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* About */
+
+table {
+	padding: 1rem;
+	background-color: var(--secondary-color);
+	border-radius: .8rem;
+	box-shadow: var(--box-shadow);
+}
+
+th,
+td {
+	border-top: 1px solid #000;
+	padding: .8rem;
+}
+
+/* ///////////////////////////////////////////////////////////////////// */
+
+/* Contact */
+.contact-info {
+	text-decoration: underline;
+	color: blue;
+}
+
+.contact-info:visited {
+	color: #05676e;
+}
+
+
+.contact-info:hover, .contact-info:focus {
+	text-decoration: none;
+}
+
+.contact-info:active {
+	color: #489c79;
+}
+
+
+form {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background: var(--secondary-color);
+	width: 400px;
+	height: 350px;
+	padding: 1rem;
+	border-radius: .8rem;
+	box-shadow: var(--box-shadow);
+}
+
+input {
+	font-family: inherit;
+}
+
+textarea {
+	font-size: 1rem;
+	font-family: inherit;
+}
+
+form .btn,
+.btn a {
+	color: var(--secondary-color);
+}
+
+.btn,
+.btn a {
+	background-color: var(--primary-color);
+	font-size: 16px;
+	cursor: pointer;
+	padding: 5px;
+	border: 10px;
+	box-shadow: var(--box-shadow);
+	font-weight: bold;
+	font-family: inherit;
+	letter-spacing: 1px;
+	transition: transform 0.1s ease;
+}
+
+.btn:hover,
+.btn:focus {
+	transform: scale(1.05);
+}
