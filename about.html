@@ -11,34 +11,19 @@
 		<title>About</title>
 	</head>
 	<body>
-			<header>
-				<nav role="navigation">
-						<img
-							src="./img/MJ-Logo-Design-01 (1).svg"
-							height="50"
-							alt="Personal Logo of Myles Jefferson"
-						/>
-					</h1>
-					<ul role="menubar">
-						<li role="presentation">
-							<a href="index.html" role="menuitem" aria-label="Home">Home</a>
-						</li>
-						<li role="presentation">
-							<a href="about.html" role="menuitem" aria-label="About Me">About</a>
-						</li>
-						<li role="presentation">
-							<a href="" role="menuitem" aria-label="Work">Work</a>
-						</li>
-						<li role="presentation">
-							<a href="contact.html" role="menuitem" aria-label="Contact"
-								>Contact</a
-							>
-						</li>
-					</ul>
-				</nav>
-			</header>
+    <header class="page-header">
+      <img class="header-item" src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo of Myles Jefferson">
+			<nav role="navigation" class="header-item">
+				<ul role="menubar" class="nav-list">
+					<li role="presentation"><a href="index.html" role="menuitem" class="nav-item">Home</a></li>
+					<li role="presentation"><a href="about.html" role="menuitem" class="nav-item" aria-label="About Me">About</a></li>
+					<li role="presentation"><a href="work.html" role="menuitem" class="nav-item">Work</a></li>
+					<li role="presentation"><a href="contact.html" role="menuitem" class="nav-item">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
 			<main>
-				<div>
+				<div class="about-desc">
 					<h1 class="title">About</h1>
 					<p>
 						I am a web developer with a proclivity for Front-End Development. I
@@ -82,5 +67,13 @@
 					</tbody>
 				</table>
 			</main>
+      <footer>
+        <p>Find me on</p>
+        <div class="social-links">
+          <img src="./img/Github_Logo.svg" alt="GitHub Logo" height="30" />
+          <img src="./img/Twitter_Logo.svg" alt="Twitter Logo" height="30" />
+          <img src="./img/LinkedIn_Logo.svg" alt="LinkedIn Logo" height="30" />
+        </div>
+      </footer>
 	</body>
 </html>

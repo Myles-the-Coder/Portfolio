@@ -11,35 +11,37 @@
 		<title>Welcome To HTML!</title>
 	</head>
 	<body>
-		<header>
-			<nav role="navigation">
-				<img src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo of Myles Jefferson">
-				<ul role="menubar">
-					<li role="presentation"><a href="index.html" role="menuitem">Home</a></li>
-					<li role="presentation"><a href="about.html" role="menuitem" aria-label="About Me">About</a></li>
-					<li role="presentation"><a href="" role="menuitem">Work</a></li>
-					<li role="presentation"><a href="contact.html" role="menuitem">Contact</a></li>
+		<header class="page-header">
+      <img class="header-item" src="./img/MJ-Logo-Design-01 (1).svg" height="50" alt="Personal Logo of Myles Jefferson">
+			<nav role="navigation" class="header-item">
+				<ul role="menubar" class="nav-list">
+					<li role="presentation"><a href="index.html" role="menuitem" class="nav-item">Home</a></li>
+					<li role="presentation"><a href="about.html" role="menuitem" class="nav-item" aria-label="About Me">About</a></li>
+					<li role="presentation"><a href="work.html" role="menuitem" class="nav-item">Work</a></li>
+					<li role="presentation"><a href="contact.html" role="menuitem" class="nav-item">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
-		<main>
+		<main class="profile">
 			<img
+        class="profile-img"
 				src="https://th.bing.com/th/id/OIP.UqkKybz-20NDOOiXTKuajgHaHa?pid=ImgDet&rs=1"
 				alt=""
-				height="150"
 			/>
 			<h1>Hello, World!</h1>
 			<h2>My name is Myles Jefferson.</h2>
 			<h2>I am a <span>&lt;web&gt;</span> developer from Colorado</h2>
 			<br />
-			<a href="" class="btn">Check out some of my code</a>
+			<a href="#" class="btn">Check out some of my code</a>
 		</main>
 		<footer>
 			<p>Find me on</p>
       <div class="social-links">
+        <a href="#" target="_blank">
         <img src="./img/Github_Logo.svg" alt="GitHub Logo" height="30" />
-        <img src="./img/Twitter_Logo.svg" alt="Twitter Logo" height="30" />
-        <img src="./img/LinkedIn_Logo.svg" alt="LinkedIn Logo" height="30" />
+          </a>
+        <a href="#" target="_blank"><img src="./img/Twitter_Logo.svg" alt="Twitter Logo" height="30" /></a>
+        <a href="#" target="_blank"><img src="./img/LinkedIn_Logo.svg" alt="LinkedIn Logo" height="30" /></a>
       </div>
 		</footer>
 	</body>
