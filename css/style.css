@@ -140,7 +140,7 @@ main.profile {
 	width: 250px;
 	float: left;
 	border-radius: 50%;
-	margin-right: 40px;
+  margin: 0 40px;
 }
 
 main .btn {
@@ -149,6 +149,16 @@ main .btn {
 
 .social-links {
 	display: flex;
+  margin-bottom: 10px;
+}
+
+.social-links img {
+  transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
+  opacity: 0.5;
 }
 
 .social-links img {
@@ -214,6 +224,54 @@ td {
 
 /* ///////////////////////////////////////////////////////////////////// */
 /* Contact */
+
+.email, .phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email img, .phone img{
+  width: 35px;
+  margin-left: 10px;
+}
+
+.email .contact-info:hover + img {
+  animation: float .5s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 10px);
+  }
+
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+.phone .contact-info:hover + img {
+  animation: shake .4s linear infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .contact-info {
 	border-bottom: 3px solid #000;
 	border-radius: 0px;
@@ -239,6 +297,7 @@ td {
 .contact-info:hover:before {
 	transform: scale(1);
 }
+
 
 .contact-info:visited {
 	color: #05676e;
@@ -269,9 +328,10 @@ form {
 	flex-direction: column;
 	text-align: center;
 	background: var(--secondary-color);
-	width: 400px;
+	max-width: 400px;
 	height: 400px;
 	padding: 1rem;
+  margin-bottom: 1rem;
 	border-radius: 0.8rem;
 	box-shadow: var(--box-shadow);
 }
@@ -320,4 +380,35 @@ main .btn,
 .btn:hover,
 .btn:focus {
 	transform: scale(1.05);
+}
+
+/* Media Queries */
+@media all and (max-width: 500px) {
+  main.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 10px
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .project:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
 }
