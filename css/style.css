@@ -2,7 +2,7 @@
 
 :root {
 	--primary-green: #86c232;
-	--secondary-green: #61892f;
+	--secondary-green: #527c00;
 	--primary-gray: #474b4f;
 	--text-color: whitesmoke;
 	--box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -62,7 +62,7 @@ p {
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 section {
@@ -108,8 +108,7 @@ li {
 	align-items: center;
 	width: 100%;
 	background: var(--primary-green);
-  opacity: 0.9;
-	padding: 5px;
+	opacity: 0.9;
 }
 
 .header-item {
@@ -141,10 +140,6 @@ section.profile,
 	align-items: center;
 	justify-content: center;
 	position: relative;
-}
-
-.profile {
-  text-align: center;
 }
 
 .profile span {
@@ -203,13 +198,13 @@ footer {
 /* Work */
 .project-list {
 	display: grid;
-	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 10px;
 }
 
 .scroll {
-  overflow-x: hidden;
-  overflow-y: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .project {
@@ -221,10 +216,8 @@ footer {
 	padding: var(--padding);
 }
 
-
 .project a {
-	color: var(--secondary-color);
-	text-decoration: underline;
+	color: var(--text-color);
 }
 
 /* ///////////////////////////////////////////////////////////////////// */
@@ -235,34 +228,53 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: var(--primary-green);
+	padding: var(--padding);
+	margin-bottom: 5px;
+	border-radius: var(--border-radius);
 }
 
 .email img,
 .phone img {
-	width: 35px;
+	width: 30px;
 	margin-left: 10px;
+	background: var(--primary-green);
 }
 
 .email .contact-info:hover + img {
-	animation: float 0.5s linear infinite;
+	animation: shift 2s linear infinite;
 }
 
-@keyframes float {
-	0% {
-		transform: translate(0, 0px);
-	}
-
-	50% {
-		transform: translate(0, 10px);
-	}
-
+@keyframes shift {
+	0%,
 	100% {
-		transform: translate(0, 0px);
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
 	}
 }
 
 .phone .contact-info:hover + img {
-	animation: shake 0.4s linear infinite;
+	animation: shake 0.3s linear infinite;
 }
 
 @keyframes shake {
@@ -282,7 +294,7 @@ footer {
 .contact-info {
 	border-bottom: 3px solid #000;
 	border-radius: 0px;
-  color: var(--primary-green);
+	color: var(--primary-gray);
 	font-size: 1.5em;
 	transition: all 0.1s linear;
 	position: relative;
@@ -344,7 +356,7 @@ form {
 }
 
 label {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 input {
@@ -400,19 +412,19 @@ section .btn,
 		gap: 10px;
 	}
 
-  form {
-    min-width: 90%;
-  }
+	form {
+		min-width: 90%;
+	}
 
-  .contact-info {
-    font-size: 1.2rem;
-  }
+	.contact-info {
+		font-size: 1.2rem;
+	}
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
 	.project-list {
 		grid-template-columns: 1fr 1fr;
 		gap: 10px;
-    height: 80%;
+		height: 80%;
 	}
 }
