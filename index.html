@@ -12,29 +12,29 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/style.production.css" />
 		<script defer src="./js/tota11y.min.js"></script>
-    <script defer src="./js/script.js"></script>
+		<script defer src="./js/script.js"></script>
 		<title>Myles Jefferson</title>
 	</head>
 	<body>
 		<header class="page-header">
 			<img
 				class="header-item"
-				src="./img/MJ-Logo-Design-01 (1).svg"
+				src="./img/MJ-Logo-Design-01.svg"
 				height="50"
 				alt="Personal Logo of Myles Jefferson"
 			/>
-			<nav role="navigation" class="header-item">
+			<nav class="header-item">
 				<ul role="menubar" class="nav-list">
 					<li role="presentation">
 						<a href="#home" role="menuitem" class="nav-item">Home</a>
 					</li>
-					<div class="vl"></div>
+          <li><div class="vl"></div></li>
 					<li role="presentation">
 						<a href="#work" role="menuitem" class="nav-item">Work</a>
 					</li>
-					<div class="vl"></div>
+          <li><div class="vl"></div></li>
 					<li role="presentation">
 						<a
 							href="#about"
@@ -44,13 +44,14 @@
 							>About</a
 						>
 					</li>
-					<div class="vl"></div>
+          <li><div class="vl"></div></li>
 					<li role="presentation">
 						<a href="#contact" role="menuitem" class="nav-item">Contact</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
+
 		<section class="profile" id="home">
 			<img
 				class="profile-img"
@@ -59,10 +60,15 @@
 			/>
 			<h1 id="profile-h1"></h1>
 			<h2>My name is Myles Jefferson.</h2>
-			<h2>I am a <span class="web-text">&lt;web&gt;</span> developer from Colorado</h2>
+			<h2>
+				I am a <span class="web-text">&lt;web&gt;</span> developer from Colorado
+			</h2>
 			<br />
-			<a href="#" class="btn">Check out some of my code</a>
+			<a href="https://github.com/Myles-the-Coder" target="_blank" class="btn"
+				>Check out some of my code</a
+			>
 		</section>
+
 		<section id="work">
 			<h1 class="title">Work</h1>
 			<div class="project-list scroll">
@@ -136,8 +142,8 @@
 		</section>
 
 		<section id="contact">
-			<h1>Let's get in touch.</h1>
 			<div class="info-container">
+			<h1>Let's get in touch.</h1>
 				<div class="email">
 					<a
 						class="contact-info"
@@ -156,11 +162,10 @@
 						alt="Mobile phone icon"
 					/>
 				</div>
-				<button class="btn contact-me">
-					<a href="mailto:99mylesjefferson@gmail.com">Contact Me</a>
-				</button>
+				<a href="mailto:99mylesjefferson@gmail.com" class="contact btn"
+					>Contact Me</a
+				>
 			</div>
-			<br />
 			<form id="contact-form">
 				<label for="name" class="standard-label">Name:</label>
 				<br />

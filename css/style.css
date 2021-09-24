@@ -159,32 +159,10 @@ section.btn {
 	color: #000;
 }
 
-.social-links {
-	display: flex;
-	margin-bottom: 10px;
-}
-
-.social-links img {
-	transition: transform 0.2s ease;
-}
-
-.social-links img:hover {
-	transform: scale(1.2);
-	opacity: 0.5;
-}
-
-.social-links img {
-	margin: 0 10px;
-	cursor: pointer;
-}
-
 .title {
 	text-align: center;
 }
 
-footer {
-	clear: both;
-}
 
 /* /////////////////////////////////////////////////////////////////////// */
 
@@ -222,6 +200,9 @@ footer {
 
 /* ///////////////////////////////////////////////////////////////////// */
 /* Contact */
+#contact {
+  flex-direction: row;
+}
 
 .email,
 .phone {
@@ -341,6 +322,10 @@ footer {
 	background-color: none;
 }
 
+.info-container {
+  margin: 1rem .5rem;
+}
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -349,7 +334,7 @@ form {
 	min-width: 400px;
 	height: 400px;
 	padding: 1rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
 }
@@ -385,6 +370,10 @@ section .btn,
 	color: var(--text-color);
 }
 
+.contact.btn {
+  margin-top: 1rem;
+}
+
 .btn,
 .btn a {
 	background-color: var(--secondary-green);
@@ -404,6 +393,32 @@ section .btn,
 	transform: scale(1.05);
 }
 
+/* Footer */
+footer {
+  clear: both;
+}
+
+.social-links {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.social-links img {
+	transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+	transform: scale(1.4);
+	opacity: 0.5;
+}
+
+.social-links img {
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+/* //////////////////////////////////////////////////////////// */
+
 /* Media Queries */
 @media all and (max-width: 400px) {
 	.project-list {
@@ -418,12 +433,18 @@ section .btn,
 	.contact-info {
 		font-size: 1.2rem;
 	}
+  
 }
 
-@media all and (min-width: 500px) and (max-width: 750px) {
-	.project-list {
-		grid-template-columns: 1fr 1fr;
+@media all and (min-width: 500px) and (max-width: 800px) {
+  .project-list {
+    grid-template-columns: 1fr 1fr;
 		gap: 10px;
 		height: 80%;
 	}
+
+  #contact {
+    flex-direction: column;
+  }
+
 }
