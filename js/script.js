@@ -2,11 +2,13 @@ const pageHeader = document.querySelector('.page-header');
 const logo = document.querySelector('.navbar-brand');
 const homeSection = document.getElementById('home');
 const closeHamburgerBtn = document.querySelector('#nav-icon');
+const toggleSwitch = document.querySelector('input[type="checkbox"]');
+const toggleIcon = document.querySelector('#toggle-icon');
 
 AOS.init();
 
 let i = 0;
-let txt = 'Hello, World!'; /* The text */
+let txt = 'My name is Myles Jefferson'; /* The text */
 let speed = 150; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {
@@ -27,12 +29,24 @@ let options = {
 
 let sectionObserver = new IntersectionObserver(function (entries, observer) {
 	entries.forEach(entry => {
+
+    function swapIntersectionDesigns(link, color) {
+      pageHeader.classList.toggle('intersected')
+      logo.src = link
+      toggleIcon.children[0].style.color = color
+    }
 		if (!entry.isIntersecting) {
-			pageHeader.classList.add('intersected');
-			logo.src = './img/MJ-Logo-Design-01.svg';
+			// pageHeader.classList.add('intersected');
+			// logo.src = './img/MJ-Logo-Design-01.svg';
+      // toggleIcon.children[0].style.color = '#000'
+      swapIntersectionDesigns('./img/MJ-Logo-Design-01.svg', '#000')
 		} else {
 			pageHeader.classList.remove('intersected');
 			logo.src = './img/MJ-Logo-Design-01-White-BG.png';
+      toggleIcon.children[0].style.color = '#fff'
+
+      // swapIntersectionDesigns('./img/MJ-Logo-Design-01-White-BG.svg', '#fff')
+
 		}
 	});
 }, options);
@@ -89,28 +103,28 @@ async function handleSubmit(e) {
 }
 form.addEventListener('submit', handleSubmit);
 
-const toggleSwitch = document.querySelector('input[type="checkbox"]');
-const toggleIcon = document.querySelector('#toggle-icon')
 
 function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-    toggleDarkLightMode("dark");
-  } else {
-    document.documentElement.removeAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "light");
-    toggleDarkLightMode("light");
-  }
+	if (e.target.checked) {
+		document.documentElement.setAttribute('data-theme', 'dark');
+		localStorage.setItem('theme', 'dark');
+		toggleDarkLightMode('dark');
+	} else {
+		document.documentElement.removeAttribute('data-theme', 'dark');
+		localStorage.setItem('theme', 'light');
+		toggleDarkLightMode('light');
+	}
 }
 
 function toggleDarkLightMode(input) {
-
-  function capitalize(word) {
-    return word.charAt(0).toUpperCase() + word.slice(1)
-  }
-  
-  toggleIcon.children[0].innerText = `${capitalize(input)} Mode`;
+	function capitalize(word) {
+		return word.charAt(0).toUpperCase() + word.slice(1);
+	}
+	toggleIcon.children[0].innerText = `${capitalize(input)} Mode`;
+	homeSection.style.backgroundImage =
+		input === 'dark'
+			? 'url(../img/wickedbackground-dark_mode.svg)'
+			: 'url(../img/wickedbackground.svg)';
 }
 
-toggleSwitch.addEventListener("change", switchTheme);
+toggleSwitch.addEventListener('change', switchTheme);
