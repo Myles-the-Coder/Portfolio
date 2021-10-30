@@ -39,23 +39,29 @@ let sectionObserver = new IntersectionObserver(function (entries, observer) {
 
 sectionObserver.observe(homeSection);
 
-const navbarNav = document.querySelector('#navbar-nav')
-const navbarNavItems = document.querySelectorAll('.nav-item')
+const navbarNav = document.querySelector('#navbar-nav');
+const navbarNavItems = document.querySelectorAll('.nav-item');
 
 closeHamburgerBtn.addEventListener('click', () =>
 	closeHamburgerBtn.classList.toggle('open')
 );
 
-const navbarSupportedContent = document.querySelector('#navbarSupportedContent')
+const navbarSupportedContent = document.querySelector(
+	'#navbarSupportedContent'
+);
 
 document.body.addEventListener('click', () => {
-  if (navbarSupportedContent.classList.contains('show')) {
-    let collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
-    let collapseList = collapseElementList.map(collapseEl => new bootstrap.Collapse(collapseEl));
-    closeHamburgerBtn.classList.remove('open')
-  } else {
-    return
-  }
+	if (navbarSupportedContent.classList.contains('show')) {
+		let collapseElementList = [].slice.call(
+			document.querySelectorAll('.collapse')
+		);
+		let collapseList = collapseElementList.map(
+			collapseEl => new bootstrap.Collapse(collapseEl)
+		);
+		closeHamburgerBtn.classList.remove('open');
+	} else {
+		return;
+	}
 });
 
 const form = document.getElementById('contact-form');
@@ -63,7 +69,7 @@ const form = document.getElementById('contact-form');
 async function handleSubmit(e) {
 	e.preventDefault();
 	let status = document.getElementById('my-form-status');
-	let data = new FormData(event.target);
+	let data = new FormData(e.target);
 	fetch(e.target.action, {
 		method: form.method,
 		body: data,
@@ -73,12 +79,38 @@ async function handleSubmit(e) {
 	})
 		.then(res => {
 			status.innerText = 'Thanks for your submission!';
-      status.classList.add('success')
+			status.classList.add('success');
 			form.reset();
 		})
 		.catch(err => {
 			status.innerText = 'There was a problem submitting your form';
-      status.classList.add('error')
-    });
+			status.classList.add('error');
+		});
 }
 form.addEventListener('submit', handleSubmit);
+
+const toggleSwitch = document.querySelector('input[type="checkbox"]');
+const toggleIcon = document.querySelector('#toggle-icon')
+
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    toggleDarkLightMode("dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "light");
+    toggleDarkLightMode("light");
+  }
+}
+
+function toggleDarkLightMode(input) {
+
+  function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  }
+  
+  toggleIcon.children[0].innerText = `${capitalize(input)} Mode`;
+}
+
+toggleSwitch.addEventListener("change", switchTheme);
