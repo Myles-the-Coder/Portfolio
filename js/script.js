@@ -4,6 +4,7 @@ const homeSection = document.getElementById('home');
 const closeHamburgerBtn = document.querySelector('#nav-icon');
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
 const toggleIcon = document.querySelector('#toggle-icon');
+const form = document.getElementById('contact-form');
 
 AOS.init();
 
@@ -29,24 +30,22 @@ let options = {
 
 let sectionObserver = new IntersectionObserver(function (entries, observer) {
 	entries.forEach(entry => {
-
-    function swapIntersectionDesigns(link, color) {
-      pageHeader.classList.toggle('intersected')
-      logo.src = link
-      toggleIcon.children[0].style.color = color
-    }
+		function swapIntersectionDesigns(link, color) {
+			pageHeader.classList.toggle('intersected');
+			logo.src = link;
+			toggleIcon.children[0].style.color = color;
+		}
 		if (!entry.isIntersecting) {
 			// pageHeader.classList.add('intersected');
 			// logo.src = './img/MJ-Logo-Design-01.svg';
-      // toggleIcon.children[0].style.color = '#000'
-      swapIntersectionDesigns('./img/MJ-Logo-Design-01.svg', '#000')
+			// toggleIcon.children[0].style.color = '#000'
+			swapIntersectionDesigns('./img/MJ-Logo-Design-01.svg', '#000');
 		} else {
 			pageHeader.classList.remove('intersected');
 			logo.src = './img/MJ-Logo-Design-01-White-BG.png';
-      toggleIcon.children[0].style.color = '#fff'
+			toggleIcon.children[0].style.color = '#fff';
 
-      // swapIntersectionDesigns('./img/MJ-Logo-Design-01-White-BG.svg', '#fff')
-
+			// swapIntersectionDesigns('./img/MJ-Logo-Design-01-White-BG.svg', '#fff')
 		}
 	});
 }, options);
@@ -64,22 +63,20 @@ const navbarSupportedContent = document.querySelector(
 	'#navbarSupportedContent'
 );
 
+//Event Handler to close Bootstrap dropdown menu
 document.body.addEventListener('click', () => {
-	if (navbarSupportedContent.classList.contains('show')) {
-		let collapseElementList = [].slice.call(
-			document.querySelectorAll('.collapse')
-		);
-		let collapseList = collapseElementList.map(
-			collapseEl => new bootstrap.Collapse(collapseEl)
-		);
-		closeHamburgerBtn.classList.remove('open');
-	} else {
-		return;
-	}
+	if (!navbarSupportedContent.classList.contains('show')) return;
+
+	let collapseElementList = [].slice.call(
+		document.querySelectorAll('.collapse')
+	);
+	let collapseList = collapseElementList.map(
+		collapseEl => new bootstrap.Collapse(collapseEl)
+	);
+	closeHamburgerBtn.classList.remove('open');
 });
 
-const form = document.getElementById('contact-form');
-
+// Formspree function
 async function handleSubmit(e) {
 	e.preventDefault();
 	let status = document.getElementById('my-form-status');
@@ -102,7 +99,6 @@ async function handleSubmit(e) {
 		});
 }
 form.addEventListener('submit', handleSubmit);
-
 
 function switchTheme(e) {
 	if (e.target.checked) {
@@ -128,3 +124,16 @@ function toggleDarkLightMode(input) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme);
+
+const projectList = document.querySelectorAll('.project');
+
+projectList.forEach(project => {
+	project.addEventListener('click', () => {
+		removeActiveClass();
+		project.classList.add('active');
+	});
+});
+
+function removeActiveClass() {
+	projectList.forEach(project => project.classList.remove('active'));
+}
