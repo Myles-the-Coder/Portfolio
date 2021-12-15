@@ -8,6 +8,13 @@ const form = document.getElementById('contact-form');
 
 AOS.init();
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('theme')) {
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+    toggleDarkLightMode(localStorage.getItem('theme'));
+  }
+})
+
 let i = 0;
 let txt = 'My name is Myles Jefferson'; /* The text */
 let speed = 150; /* The speed/duration of the effect in milliseconds */
